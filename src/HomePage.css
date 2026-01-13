@@ -1,0 +1,399 @@
+/* Modern Home Page Styles */
+.home-page {
+  background-color: var(--bg-body);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 140px 0 100px;
+  text-align: center;
+  overflow: hidden;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  background-color: var(--secondary);
+  /* Fallback */
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(59, 130, 246, 0.9) 100%);
+  z-index: 2;
+}
+
+/* Ensure content sits above background */
+.hero-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 300;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+/* Glass Cards shared style */
+.feature-card,
+.heritage-content,
+.card-small {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-smooth);
+}
+
+/* Why Us Section */
+.why-us-section {
+  padding: 80px 0;
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+}
+
+.why-us-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--secondary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  animation: fadeInScale 0.6s ease-out both;
+}
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.feature-card h3 {
+  color: var(--secondary);
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+/* Heritage Section */
+.heritage-section {
+  padding: 100px 0;
+  background: white;
+  position: relative;
+}
+
+/* Add subtle pattern background */
+.heritage-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#e0f2fe 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+}
+
+.heritage-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.heritage-text h2 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heritage-intro {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--primary-dark);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.heritage-text p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+.heritage-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-light);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 100px 0;
+  background: var(--bg-body);
+}
+
+.featured-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.card-small {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.card-small:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-thumb {
+  height: 200px;
+  background: #f1f5f9;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  transition: transform 0.5s ease;
+}
+
+.card-small:hover .card-thumb img {
+  transform: scale(1.05);
+}
+
+.card-body-small {
+  padding: 24px;
+}
+
+.card-body-small h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: var(--secondary);
+}
+
+.car-year {
+  background: var(--bg-body);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  vertical-align: middle;
+}
+
+.price-small {
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.short-small {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.card-actions-small {
+  margin-top: auto;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%);
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .grid-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .heritage-content {
+    padding: 30px;
+  }
+
+  .feature-card {
+    margin-bottom: 20px;
+  }
+
+  .heritage-stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

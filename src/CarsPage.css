@@ -1,0 +1,190 @@
+/* Modern Shop Cars Page Styles */
+.cars-browse {
+  min-height: 100vh;
+  background-color: var(--bg-body);
+}
+
+/* Browse Hero with Filters */
+.browse-hero {
+  background: white;
+  padding: 60px 0 40px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.browse-hero h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--secondary);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.filters-row {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid var(--border-light);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+.filters-row select {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--bg-body);
+  border: 1px solid var(--border-light);
+  color: var(--secondary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filters-row select:hover {
+  border-color: var(--primary-light);
+}
+
+.filters-row .btn {
+  padding: 12px 32px;
+  min-width: 120px;
+}
+
+/* Cars List */
+.cars-list {
+  padding: 60px 20px;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styling (inherits some from global but refined here) */
+.card-small {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.card-small:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+  z-index: 2;
+}
+
+.card-thumb {
+  height: 220px;
+  background: radial-gradient(circle at center, #f8fafc 0%, #e2e8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-thumb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card-small:hover .card-thumb img {
+  transform: scale(1.1);
+}
+
+.card-body-small {
+  padding: 24px;
+  background: white;
+  border-top: 1px solid var(--border-light);
+}
+
+.card-body-small h3 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  color: var(--secondary);
+}
+
+.car-year {
+  background: var(--bg-body);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.price-small {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 12px 0;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.short-small {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.card-actions-small .btn {
+  width: 100%;
+  background: var(--bg-body);
+  color: var(--secondary);
+  border: 1px solid var(--border-light);
+}
+
+.card-actions-small .btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .filters-row {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .filters-row select,
+  .filters-row .btn {
+    width: 100%;
+  }
+
+  .browse-hero h1 {
+    font-size: 2rem;
+  }
+}
